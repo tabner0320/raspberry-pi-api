@@ -1,36 +1,39 @@
-raspberry-pi-api is a RESTful API built to support Raspberry Pi-based applications.
-It provides structured endpoints for managing and retrieving device-related data.
+# Raspberry Pi API
 
-This project demonstrates backend API development, routing, and server-side logic.
+A REST API built with **Node.js** and **Express** to demonstrate backend development for Raspberry Pi-style device control.
 
-Features
+The project currently uses a **mock GPIO service**, allowing the API to simulate turning an LED on and off without requiring physical Raspberry Pi hardware.
 
-RESTful API architecture
+## Features
 
-JSON-based request/response handling
+- RESTful API architecture
+- JSON request and response handling
+- Modular route, controller, and service structure
+- Mock GPIO / LED state management
+- CORS support
+- Simple status endpoint
+- Easy local development with Node.js
 
-Modular route structure
+## Tech Stack
 
-Error handling middleware
+- Node.js
+- Express.js
+- JavaScript
+- CORS
+- Git & GitHub
 
-Environment-based configuration
+## Project Structure
 
-Tech Stack
-
-Node.js
-
-Express.js
-
-JavaScript
-
-Git & GitHub
-
-Clone the repository:
-git clone https://github.com/yourusername/raspberry-pi-api.git
-cd raspberry-pi-api
-
-Install dependencies:
-npm install
-
-Start the server:
-npm start
+```text
+raspberry-pi-api/
+├── controllers/
+│   └── gpioController.js
+├── routes/
+│   └── gpioRoutes.js
+├── services/
+│   └── gpioService.js
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+└── server.js
