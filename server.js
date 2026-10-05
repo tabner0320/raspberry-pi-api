@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const gpioRoutes = require("./routes/gpioRoutes");
 
 const app = express();
@@ -8,11 +9,11 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/gpio", gpioRoutes);
+// Serve the dashboard from the public folder
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.send("Raspberry Pi API is running");
-});
+// GPIO API routes
+app.use("/api/gpio", gpioRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

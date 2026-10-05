@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raspberry Pi GPIO API</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="hero">
+            <p class="eyebrow">NODE.JS • EXPRESS • REST API</p>
+
+            <h1>Raspberry Pi GPIO API</h1>
+
+            <p class="subtitle">
+                A REST API dashboard for controlling and monitoring
+                a simulated Raspberry Pi LED.
+            </p>
+        </header>
+
+        <section class="status-grid">
+
+            <article class="card">
+
+                <p class="card-label">API STATUS</p>
+
+                <div class="api-status">
+                    <span class="status-dot"></span>
+                    <span>Running</span>
+                </div>
+
+                <p class="card-description">
+                    Express server is online and responding on port 3000.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <p class="card-label">GPIO / LED STATUS</p>
+
+                <div id="ledStatus" class="led-status">
+                    OFF
+                </div>
+
+                <p class="card-description">
+                    Current simulated GPIO state.
+                </p>
+
+            </article>
+
+        </section>
+
+        <section class="control-panel">
+
+            <div>
+                <p class="card-label">GPIO CONTROLS</p>
+
+                <h2>Control the simulated LED</h2>
+
+                <p>
+                    These controls send requests directly to the
+                    Express REST API.
+                </p>
+            </div>
+
+            <div class="button-group">
+
+                <button id="turnOnButton" class="button primary">
+                    Turn LED On
+                </button>
+
+                <button id="turnOffButton" class="button secondary">
+                    Turn LED Off
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="endpoints">
+
+            <p class="card-label">API ENDPOINTS</p>
+
+            <h2>REST Operations</h2>
+
+            <div class="endpoint-list">
+
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/gpio/status</code>
+                </div>
+
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <code>/api/gpio/on</code>
+                </div>
+
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <code>/api/gpio/off</code>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <strong>Development Mode</strong>
+            <span>GPIO hardware is currently simulated.</span>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
